@@ -1,4 +1,5 @@
 import 'package:first_project/utils/coffee_tile.dart';
+import 'package:first_project/utils/coffee_type.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -39,7 +40,7 @@ class _HomePageState extends State<HomePage> {
             child: Text(
               "Find the best coffee for you",
               style: GoogleFonts.bebasNeue(
-                fontSize: 60,
+                fontSize: 40,
               ),
             ),
           ),
@@ -64,6 +65,27 @@ class _HomePageState extends State<HomePage> {
           ),
 
           SizedBox(height: 25),
+
+          Container(
+            height: 50,
+            child: ListView(
+              scrollDirection: Axis.horizontal,
+              children: [
+                CoffeeType(
+                  coffeeType: 'Latte',
+                  isSelected: true,
+                ),
+                CoffeeType(
+                  coffeeType: 'Cappucino',
+                  isSelected: false,
+                ),
+                CoffeeType(
+                  coffeeType: 'Milk',
+                  isSelected: false,
+                ),
+              ],
+            ),
+          ),
 
           //horizontal listview of coffee tiles
           Expanded(
